@@ -16,6 +16,10 @@
             <result type="redirectAction">Menu</result>
         </action>
 
+        <action name="Test_*" class="com.wssht.action.TestAction" method="{1}">
+            <result name="success">/WEB-INF/jsp/test.jsp</result>
+        </action>
+
         <action name="*" class="example.ExampleSupport">
             <result>/WEB-INF/jsp/example/{1}.jsp</result>
         </action>
