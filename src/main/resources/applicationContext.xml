@@ -55,6 +55,11 @@
 	</bean>
 
 	<!--Spring中的事物配置声明.1 基于xml 配置方式 2.基于注解来声明那些类 -->
-	<tx:annotation-driven transaction-manager="txManager" />
+	<tx:annotation-driven transaction-manager="txMandager" />
+
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
 </beans>  

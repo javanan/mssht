@@ -6,5 +6,10 @@ import com.wssht.entity.TestEntity;
 
 public interface TestService {
 
-	public List<TestEntity> query();
+	
+	/**
+	 * 获取 TestEntity 的所有记录
+	 */
+	public List<TestEntity> loadAll();
+	public void save(TestEntity testEntity);
 }
