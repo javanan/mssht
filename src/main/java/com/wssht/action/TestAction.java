@@ -51,7 +51,7 @@ public class TestAction extends ActionSupport implements ServletRequestAware {
 		return SUCCESS;
 	}
 
-	@Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
+	
 	public String loadAll() {
 		List<TestEntity> TestEntitys = testService.loadAll();
 
@@ -59,12 +59,12 @@ public class TestAction extends ActionSupport implements ServletRequestAware {
 		List<TestEntity> TestEntitys2 = testService.loadAll();
 
 		for (TestEntity testEntity : TestEntitys) {
-			System.out.println("--11"+testEntity.getId());
-			System.out.println("--11"+testEntity.getName());
+			System.out.println("--11--"+testEntity.getId());
+			System.out.println("--11--"+testEntity.getName());
 		}
 		for (TestEntity testEntity1 : TestEntitys2) {
-			System.out.println("--22"+testEntity1.getId());
-			System.out.println("--2"+testEntity1.getName());
+			System.out.println("--22--"+testEntity1.getId());
+			System.out.println("--22--"+testEntity1.getName());
 		}
 		return SUCCESS;
 	}
@@ -73,5 +73,8 @@ public class TestAction extends ActionSupport implements ServletRequestAware {
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 	}
+	
+	
+	
 
 }

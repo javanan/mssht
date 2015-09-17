@@ -5,25 +5,37 @@
 
 <struts>
 
-    <package name="example" namespace="/example" extends="default">
+	<package name="example" namespace="/example" extends="default">
 
-        <action name="HelloWorld" class="example.HelloWorld">
-            <result>/WEB-INF/jsp/example/HelloWorld.jsp</result>
-        </action>
 
-        <action name="Login_*" method="{1}" class="example.Login">
-            <result name="input">/WEB-INF/jsp/example/Login.jsp</result>
-            <result type="redirectAction">Menu</result>
-        </action>
 
-        <action name="testAction_*" class="testAction"  method="{1}">
-            <result name="success">/WEB-INF/jsp/test.jsp</result>
-        </action>
 
-        <action name="*" class="example.ExampleSupport">
-            <result>/WEB-INF/jsp/example/{1}.jsp</result>
-        </action>
+		<action name="user_*" class="userAction" method="{1}">
 
-        <!-- Add actions here -->
-    </package>
+			<result name="adminerr">admin/login.jsp</result>
+			<result name="adminok" >/WEB-INF/jsp/admin/main.jsp
+			</result>
+		</action>
+
+
+
+		<action name="HelloWorld" class="example.HelloWorld">
+			<result>/WEB-INF/jsp/example/HelloWorld.jsp</result>
+		</action>
+
+		<action name="Login_*" method="{1}" class="example.Login">
+			<result name="input">/WEB-INF/jsp/example/Login.jsp</result>
+			<result type="redirectAction">Menu</result>
+		</action>
+
+		<action name="testAction_*" class="testAction" method="{1}">
+			<result name="success">/WEB-INF/jsp/test.jsp</result>
+		</action>
+
+		<action name="*" class="example.ExampleSupport">
+			<result>/WEB-INF/jsp/example/{1}.jsp</result>
+		</action>
+
+		<!-- Add actions here -->
+	</package>
 </struts>

@@ -11,10 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="test")
+@Cache(usage=CacheConcurrencyStrategy.READ_WRITE)
 public class TestEntity implements Serializable{
 
 	private String id;
