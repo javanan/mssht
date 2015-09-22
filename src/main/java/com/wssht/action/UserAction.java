@@ -37,7 +37,9 @@ public class UserAction extends ActionSupport implements ServletRequestAware{
 	private UserService userService;
 	
 	public String login(){
-		if(userService.login(user)!=null){
+		UserEntity currUser=userService.login(user);
+		if(currUser!=null){
+			request.getSession().setAttribute("currUser", currUser);
 			return "adminok";
 		}else{
 			return "adminerr";
