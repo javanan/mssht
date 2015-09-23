@@ -38,5 +38,19 @@ public interface BaseDao<T> {
 	 * @return
 	 */
 	public T fetch(Class<T> entityClass, Map<Object, Object> vks);
+	
+	/**
+	 * 根据id获得某个对象
+	 * @param entityClass
+	 * @param id
+	 * @return
+	 */
+	public T get(Class<T> entityClass ,Serializable  id);
+	
+	/**
+	 * 融合一个对象，update失败改为insert
+	 * @param o
+	 */
+	public void merge(T o);
 
 }

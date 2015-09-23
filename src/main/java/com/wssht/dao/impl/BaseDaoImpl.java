@@ -77,6 +77,13 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 		}
 	}
 	
-	
+	public T get(Class<T> entityClass ,Serializable  id){
+		return hibernateTemplate.get(entityClass, id);
+	}
+
+	@Override
+	public void merge(T o) {
+		hibernateTemplate.merge(o);
+	}
 	
 }

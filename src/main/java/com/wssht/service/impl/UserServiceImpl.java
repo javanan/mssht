@@ -14,7 +14,7 @@ import com.wssht.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private BaseDao baseDao;
+	private BaseDao<UserEntity> baseDao;
 	
 	
 	@Override
@@ -22,7 +22,21 @@ public class UserServiceImpl implements UserService {
 		Map<Object, Object> vks=new HashMap<Object, Object>();
 		vks.put("lodname", user.getLodname());
 		vks.put("password", user.getLodname());
-		return (UserEntity) baseDao.fetch(UserEntity.class, vks); 
+		return  baseDao.fetch(UserEntity.class, vks); 
+	}
+
+
+
+	@Override
+	public UserEntity getUserById(String userId) {
+		return  baseDao.get(UserEntity.class, userId);
+	}
+
+
+
+	@Override
+	public void save(UserEntity user) {
+		baseDao.merge(user);
 	}
 
 }

@@ -13,4 +13,18 @@ public interface UserService {
 	 */
 	@Transactional
 	public UserEntity login(UserEntity user);
+	
+	/**
+	 * 根据用户id获得该用户对象
+	 * @return
+	 */
+	@Transactional
+	public UserEntity getUserById(String userId);
+	
+	/**
+	 * 融合一个对象
+	 * @param user
+	 */
+	@Transactional
+	public void save(UserEntity user);
 }
