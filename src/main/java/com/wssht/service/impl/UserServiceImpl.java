@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 	public UserEntity login(UserEntity user) {
 		Map<Object, Object> vks=new HashMap<Object, Object>();
 		vks.put("lodname", user.getLodname());
-		vks.put("password", user.getLodname());
+		vks.put("password", user.getPassword());
 		return  baseDao.fetch(UserEntity.class, vks); 
 	}
 
